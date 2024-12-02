@@ -1,7 +1,0 @@
-flask
-streamlit
-transformers
-requests
-pandas
-plotly
-nltk
