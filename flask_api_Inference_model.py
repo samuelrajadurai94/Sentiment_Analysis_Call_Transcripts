@@ -1,7 +1,10 @@
 from flask import Flask, request, jsonify
+from dotenv import load_dotenv
 import os
 import requests
 
+load_dotenv()
+HFmodel_API_TOKEN = os.getenv("HF_API_TOKEN")
 
 app = Flask(__name__)
 UPLOAD_FOLDER = '/tmp/uploads'
@@ -10,7 +13,7 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 API_URL = "https://api-inference.huggingface.co/models/facebook/bart-large-mnli"
-headers = {"Authorization": "Bearer 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"}
+headers = {"Authorization": HFmodel_API_TOKEN }
 
 def query(payload):
 	response = requests.post(API_URL, headers=headers, json=payload)
