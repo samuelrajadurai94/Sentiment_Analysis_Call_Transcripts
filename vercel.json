@@ -4,6 +4,6 @@
         {"src": "flask_api_Inference_model.py", "use": "@vercel/python"}
     ],
     "routes": [
-        {"src": "/(.*)", "dest": "flask_api_Inference_model.py"}
+        {"src": "/(.*)", "dest": "/flask_api_Inference_model.py"}
     ]
 }
